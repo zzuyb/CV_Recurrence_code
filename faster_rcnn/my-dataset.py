@@ -18,7 +18,7 @@ class VOCDataSet(Dataset):
         assert os.path.exists(txt_path),"not found{} file.".format(txt_name)
 
         with open(txt_path) as read:
-            self.xml_list=[os.path.join(self.annotation_root),line.strip()+".xml" 
+            self.xml_list=[os.path.join(self.annotation_root,line.strip()+".xml") 
                            for line in read.readlines() if len(line.strip())>0]
         
         assert len(self.xml_list)>0,"in '{}' file does not find any information".format(txt_path)
